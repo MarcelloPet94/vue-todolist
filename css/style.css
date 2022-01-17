@@ -27,10 +27,8 @@
     width: 100px;
 }
 
-.listaElementi
+.listaElemento
 {
-    display: flex;
-    justify-content: space-between;
     text-align: left;
     border-radius: 15px;
     padding: 8px 16px;
@@ -38,6 +36,15 @@
     background-color: rgb(241, 241, 241);
 }
 
+.cosa-fare
+{
+    display: flex;
+    justify-content: space-between;
+}
 
+.sbarrata
+{
+    text-decoration: line-through;
+}
 
 

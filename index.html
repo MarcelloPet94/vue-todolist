@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="css/style.css">
     <title>To do list</title>
 </head>
@@ -11,16 +13,16 @@
     
 <div id="vueApp">
      <div class="contenitore aggiungi">
-        <input type="text" v-model="add">
-        <button @click="lista.push(add)">add</button>
+        <input type="text" v-model="aggiungi">
+        <button @click="aggiungiLista()">add</button>
     </div>    
-    <div v-for="(x , indice) in lista" class="contenitore listaElementi">
-        <div>
-            <p>{{add}}{{indice}}</p>
+    <div v-for="(elemento , indice) in lista" class="contenitore listaElemento">
+        <div class="cosa-fare">
+            <p :class="{sbarrata : elemento.done}" @click="cambiaStato(indice)">{{elemento.testo}}</p>
+            <i class="far fa-trash-alt" @click="rimuoviLista(indice)"></i>
         </div>
     </div>
 </div>
-
 <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 <script src="js/func.js"></script>
 </body>
