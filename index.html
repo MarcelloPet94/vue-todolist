@@ -10,13 +10,13 @@
 <body>
     
 <div id="vueApp">
-<!--     <div class="contenitore aggiungi">
-        <input v-model="add">
-        <button>add</button>
-    </div>    --> 
-    <div v-for="(x , indice) in lista" v-if="x.done" class="contenitore listaElementi">
+     <div class="contenitore aggiungi">
+        <input type="text" v-model="add">
+        <button @click="lista.push(add)">add</button>
+    </div>    
+    <div v-for="(x , indice) in lista" class="contenitore listaElementi">
         <div>
-            <p>{{x.elemento}}{{indice}}</p>
+            <p>{{add}}{{indice}}</p>
         </div>
     </div>
 </div>
